@@ -1,0 +1,29 @@
+input[type='search']{
+    margin: 1em 0em;
+    font-size: 2.2em;
+    text-transform: capitalize;
+}
+#basic-addon1{
+    font-size: 2.625rem;
+    margin-top: .8em;
+    margin-right: .4em;
+}
+
+.form-control{
+    background-image: linear-gradient(0deg,#190096 2px,rgba(0,150,136,0) 0),linear-gradient(0deg,rgba(0,0,0,.26) 1px,transparent 0);
+}
+
+h1{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    letter-spacing: -0.046em;
+    font-weight: 900;
+    font-style: normal;
+}
+.input-group-prepend{
+    width: 100%;
+}
+
+/deep/ .bmd-form-group{
+   width: 100%;
+}

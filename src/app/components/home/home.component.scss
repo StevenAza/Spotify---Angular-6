@@ -1,0 +1,32 @@
+.card{
+    .card-body{
+        .card-title{
+           font-weight: bolder !important;
+        }
+        .artist{
+            padding: .5em .3em;
+            border: 1px dotted;
+            margin-right: 1em;
+            position: relative;
+        }
+        .ribbon {
+            height: 188px;
+            position: relative;
+            margin-bottom: 30px;
+            background: url(https://html5book.ru/wp-content/uploads/2015/10/snow-road.jpg);
+            background-size: cover;
+            text-transform: uppercase;
+            color: white;
+          }
+        .ribbon4 {
+            position: absolute;
+            top: 15px;
+            padding: 8px 10px;
+            background: #00B3ED;
+            box-shadow: -1px 2px 3px rgba(0,0,0,.3);
+            
+          }
+
+        
+    }
+}
