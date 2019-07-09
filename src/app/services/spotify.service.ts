@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,10 +11,31 @@ export class SpotifyService {
   constructor(private ht: HttpClient) {
      
    }
+
+   
+  peticiones(query:string){
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQA3sCrGzrZfp7j66RGE7HldJw3ON14kBYne6o1ylYkHtlgKjmerNM0mbVgrPHemTqckL6lZbgnIwJ9g1Bo'
+    });
+    const url = `https://api.spotify.com/v1/${query}`;
+    return this.ht.get(url, {headers})
+  }
+
+
    getReleases(){
-      const headers = new HttpHeaders({
-        'Authorization': 'Bearer BQAfEbqxUOuKqSFL4KZSXnRY0FyTwONT_fj6TREJAxp_V1RNobrvs9Tz-YlkNzYY8wo6wfNv8CE5DLSYmvs'
-      });
-     return this.ht.get('https://api.spotify.com/v1/browse/new-releases?country=co&limit=20', {headers});
+    
+    return this.peticiones('browse/new-releases?country=co&limit=20').
+     pipe(map(data=>{
+        return data['albums'].items;
+     }));
+   }
+
+   getSearch(param){
+    return this.peticiones(`search?q=${ param }&type=album`).pipe(map(data=>{
+        console.log(data);
+          return data['albums'].items;
+          
+     }));
+
    }
 }

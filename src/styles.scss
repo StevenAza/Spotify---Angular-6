@@ -1,8 +1,25 @@
-
+%outline-n {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
 body{
     background-color: #e2e2e2;
     
     .container{
         margin-top: 3em;
+    }
+
+    //RESETEO OUTLINE
+
+    input.form-control{
+        &:focus{
+            @extend %outline-n;
+        }
+        &:active{
+            @extend %outline-n;
+        }
     }
 }

@@ -1,0 +1,10 @@
+
+<div class="card-columns">
+    <div class="card" *ngFor="let item of albumi" (click)="verAlbum(item.id)">
+      <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <label class="artist" *ngFor="let artistas of item.artists">{{ artistas.name }}</label>
+      </div>
+    </div>
+</div>

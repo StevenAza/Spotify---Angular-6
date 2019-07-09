@@ -1,10 +1,4 @@
-<app-search></app-search>
-<div class="card-columns">
-        <div class="card" *ngFor="let item of album">
-          <img class="card-img-top" [src]="item.images[0].url" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{ item.name }}</h5>
-            <label class="artist" *ngFor="let artistas of item.artists">{{ artistas.name }}</label>
-          </div>
-        </div>
-      </div>
+<app-cards [albumi]="album"></app-cards>
+<div class="d-flex justify-content-center">
+    <app-loader *ngIf="show"></app-loader>
+</div>

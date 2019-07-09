@@ -13,6 +13,9 @@ import { ROUTES } from './app.routes';
 // HTTTP PETICIONES
 import { HttpClientModule } from '@angular/common/http';
 import { SpotifyService } from './services/spotify.service';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardsComponent } from './components/cards/cards.component';
+import { LoaderComponent } from './components/shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { SpotifyService } from './services/spotify.service';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe,
+    CardsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
