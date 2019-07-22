@@ -3,3 +3,10 @@
     width: 9em;
     margin: 2em 0em;
 }
+/deep/ #big .spinner-grow{
+    margin: 0 auto;
+    width: 40em;
+    height: 40em;
+    display: flex;
+    justify-content: center;
+}

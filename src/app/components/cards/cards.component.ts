@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class CardsComponent{
   @Input() albumi: any[] = [];
+  list: boolean = false;
   constructor(private route: Router) { 
 
   }

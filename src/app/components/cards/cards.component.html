@@ -1,5 +1,22 @@
+<div class="config">
+    <div class="dropdown pull-xs-right">
+        <label class="companion" for="Tool">Mostrar</label>
+        <button #Tool class="btn bmd-btn-icon dropdown-toggle btn-spotify" type="button" id="lr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="material-icons">more_vert</i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="lr1">
+          <button class="dropdown-item" type="button" (click)="list = false"> 
+            <i class="material-icons">grid_on</i> Grid
+          </button>
+          <button class="dropdown-item" type="button" (click)="list = true">
+              <i class="material-icons">view_headline</i> Lista
+          </button>
+        </div>
+    </div>
+</div>
 
-<div class="card-columns">
+
+<div class="card-columns" [class.list]="list">
     <div class="card" *ngFor="let item of albumi" (click)="verAlbum(item.id)">
       <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
       <div class="card-body">

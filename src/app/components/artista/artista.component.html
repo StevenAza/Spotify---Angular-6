@@ -1,3 +1,46 @@
-<p>
-  artista works!
-</p>
+<app-navbar></app-navbar>
+<div class="container">
+      <div class="row">
+            <div class="jumbotron col-lg-12"
+                  [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(0,0,0,0.91) 0%,rgba(89, 84, 84, 0.83) 100%),url(' + this.album['images'][0]?.url + ')'}">
+                  <h1 class="display-4">{{ album.name }}</h1>
+                  <hr class="my-4">
+                  <div class="row descript-album">
+                        <div class="col-3 lg-3">
+                              <img [src]="this.album['images'][0]?.url" alt="">
+                        </div>
+                        <div class="col-5 lg-5 title-album">
+                              <p *ngFor="let item of album['artists']">Artista: {{ item.name }}</p>
+                              <p *ngFor="let item of album['artists']">Año: {{ album.release_date  | date: 'yyyy'}}</p>
+                             <ng-container [ngSwitch]="modal">
+                                    <button type="button" *ngSwitchCase="false" (click)="seguirAlbum()" class="btn btn-raised btn-spotify btn-lg"><i class="material-icons">
+                                                favorite_border
+                                   </i> Seguir</button>
+                                   <span *ngSwitchCase="true" class="badge-spotify">Sigues este album</span>
+                             </ng-container>
+                        </div>
+      
+                  </div>
+            </div>
+      </div>
+      <div id="tracks">
+            <div class="col-10 col-md-10 col-xl-10 col-sm-10 col-lg-10">
+                  <div class="card">
+                        <div class="card-body">
+                              <h2><i class="material-icons">
+                                          library_music
+                                    </i> Lista de tracks</h2>
+                              <ul class="list-group">
+                                    <li class="li-track" *ngFor="let track of tracks">
+                                          <iframe [src]="track.uri | domsanity " height="80" frameborder="0"
+                                                allowtransparency="true" allow="encrypted-media"></iframe>
+                                    </li>
+                              </ul>
+                        </div>
+      
+                  </div>
+            </div>
+      </div>
+      <app-back></app-back>
+</div>
+

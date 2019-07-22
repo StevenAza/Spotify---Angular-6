@@ -1,9 +1,41 @@
+$gradient-start: #00b09b;
+$gradient-end: #96c93d;
+
 %outline-n {
     outline:none !important;
     outline-width: 0 !important;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
+}
+
+%btn-spotify{
+    margin-top: 2em;
+    width: 70%;
+    font-size: 1.8em;
+    text-transform: none !important;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    position: relative;
+    background: linear-gradient(45deg, $gradient-start 10%, $gradient-end 90%);
+    background-size: 200% 100%;
+    color: white;
+    transition: .3s;
+    animation: bruh 3s linear infinite;
+}
+@keyframes bruh {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 body{
     background-color: #e2e2e2;
@@ -21,5 +53,14 @@ body{
         &:active{
             @extend %outline-n;
         }
+    }
+    .btn-spotify{
+        @extend %btn-spotify;
+    }
+    .badge-spotify{
+        background-color: #3f51b5;
+        color: white;
+        padding: .5em;
+        font-weight: lighter;
     }
 }

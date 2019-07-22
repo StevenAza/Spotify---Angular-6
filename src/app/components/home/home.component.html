@@ -1,4 +1,8 @@
-<app-cards [albumi]="album"></app-cards>
-<div class="d-flex justify-content-center">
-    <app-loader *ngIf="show"></app-loader>
+<app-navbar></app-navbar>
+<div class="container">
+    <app-cards [albumi]="album"></app-cards>
+    <div class="d-flex justify-content-center">
+        <app-loader *ngIf="show"></app-loader>
+    </div>
 </div>
+

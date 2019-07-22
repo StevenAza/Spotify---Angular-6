@@ -23,7 +23,7 @@ nav{
     }
     ul {
         li{
-           
+
             a.nav-link{
                 font-size: 1.1em;
                 color: white;
@@ -37,6 +37,9 @@ nav{
             }
             &:first-child{
                 margin-left: 1em;
+            }
+            &:last-child{
+                width: 10em;
             }
         }
     }

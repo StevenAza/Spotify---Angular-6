@@ -1,0 +1,17 @@
+<ul>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img [src]="Perfil?.images[0]?.url"/></a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" ><i class="material-icons">perm_identity</i> {{ Perfil.display_name }}</a>
+    <a class="dropdown-item">
+      <div class="seguidores">
+        <p><span>{{ Perfil.followers.total}}</span> Seguidores</p>
+      </div>
+    </a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" (click)="log_out()"><i class="material-icons outline">
+        lock_outline
+        </i> Cerrar sesión</a>
+  </div>
+</li>
+</ul>

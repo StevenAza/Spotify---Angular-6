@@ -1,0 +1,29 @@
+#login-container{
+    background-image: url("/assets/fondo-login.svg");
+    background-size: cover;
+    height: 38em;
+    .login{
+        .card-login{
+            background-color: white;
+            width:46%;
+            padding: 6em;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 1em;
+            h1{
+                font-size: 4em;
+                font-weight: bold;
+            }
+            .btn-spotify{
+                margin-top: 2em;
+                width: 70%;
+                font-size: 1.8em;
+                color: white;
+                border-radius: 2em;
+                font-weight: lighter;
+            }
+        }
+    }
+}
+
+

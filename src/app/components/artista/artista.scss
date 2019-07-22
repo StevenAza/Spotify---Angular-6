@@ -1,0 +1,61 @@
+.jumbotron{
+   background-size: cover;
+   margin-top: -58px;
+   h1{
+       color:white;
+       font-size: 4em;
+       font-weight: bold;
+   }
+   hr{
+       color:white;
+       background-color: white;
+   }
+   .descript-album{
+        img{
+            height: 16em;
+            
+        }
+        .title-album{
+            margin-left: 2em;
+            p{
+                font-weight: bolder;
+                color:white; 
+                font-size: 2.4em;
+            }
+        }
+   }
+}
+
+/deep/ #tracks{
+    h2{
+        margin-left: .5em;
+        font-weight: lighter;
+    }
+   /deep/ .li-track{
+       list-style: none;
+       padding-top:0px;
+       margin-left: 1em;
+       padding-bottom: 0px;
+        iframe{
+            width: 100%;
+        }
+        &:first-child{
+            margin-right: 0em;
+        }
+    }
+}
+
+.card{
+    border-radius: 11px;
+}
+.show{
+    display: block;
+}
+.btn-spotify{
+    margin-top: 2em;
+    width: 70%;
+    font-size: 1.8em;
+    color: white;
+    border-radius: 2em;
+    font-weight: lighter;
+}
