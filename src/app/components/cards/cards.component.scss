@@ -6,6 +6,9 @@
     label.companion{
         font-weight: bold;
         font-size: 1.2em;
+        i{
+            vertical-align: middle;
+        }
     }
     button.btn-spotify{
         width: 3rem;
@@ -35,12 +38,12 @@
 .card-columns.list{
     column-count: 1 !important;
     .card{
-        width: 40%;
+        width: 32%;
         margin: 0 auto;
         margin-bottom: 3em;
         display: flex;
         img{
-            height: 31em;
+            height: 21em;
         }
     }
 }

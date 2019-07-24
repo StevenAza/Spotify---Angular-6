@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.service';
+import { SpotifyService } from  'spotify'
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
@@ -9,16 +9,18 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   Perfil: any[] = [];
   constructor(private spotify: SpotifyService, private rout: Router) { 
-  }
-
-  ngOnInit() {
-    this.spotify.geProfile().subscribe((data:any) => {
+    this.spotify.geProfile().subscribe((data:any[]) => {
       this.Perfil = data;
       console.log(this.Perfil);
     },error => {
         // LLAMO EL SERVICIO QUE REFRESCA EL TOKEN
           //this.rout.navigate(['/login']);
     });
+  
+  }
+
+  ngOnInit() {
+ 
    
   }
   log_out(){

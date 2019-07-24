@@ -1,6 +1,18 @@
 <div class="config">
     <div class="dropdown pull-xs-right">
-        <label class="companion" for="Tool">Mostrar</label>
+        <label class="companion" for="Tool" [ngSwitch]="list">Mostrar
+
+          <i class="material-icons" *ngSwitchCase="true">
+              view_headline
+          </i>
+          <i class="material-icons" *ngSwitchCase="false">
+              grid_on
+          </i>
+          <i *ngSwitchDefault>
+              grid_on
+          </i>
+
+        </label>
         <button #Tool class="btn bmd-btn-icon dropdown-toggle btn-spotify" type="button" id="lr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="material-icons">more_vert</i>
         </button>
@@ -14,14 +26,18 @@
         </div>
     </div>
 </div>
-
-
-<div class="card-columns" [class.list]="list">
-    <div class="card" *ngFor="let item of albumi" (click)="verAlbum(item.id)">
-      <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
+<div class="card-columns" [ngClass]="{'list': list}" >
+    
+  
+    <div class="card" [ngClass]="list ? 'animated slideInLeft': 'animated zoomIn'" *ngFor="let item of albumi" (click)="verAlbum(item.id ? item.id : item.album.id)">
+      <img class="card-img-top" [src]="item | noimage" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">{{ item.name }}</h5>
-        <label class="artist" *ngFor="let artistas of item.artists">{{ artistas.name }}</label>
+        <h5 class="card-title">{{ item.name ? item.name : item.album.name }}</h5>
+        <ng-container *ngIf="item.album">
+            <label class="artist" *ngFor="let artistas of item.album.artists">{{artistas.name}}</label>
+        </ng-container>
+        
+        <label class="artist" *ngFor="let artistas of item.artists">{{ artistas.name ? artistas.name : artistas.album.name }}</label>
       </div>
     </div>
 </div>

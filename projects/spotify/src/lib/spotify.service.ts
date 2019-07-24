@@ -27,10 +27,16 @@ export class SpotifyService {
    }
    getSearch(param){
     return this.peticiones(`search?q=${ param }&type=album`).pipe(map(data=>{
-        console.log(data);
+       
           return data['albums'].items;
           
      }));
+   }
+   getallAlbum(){
+     return this.peticiones('me/albums').pipe(map(data =>{
+
+       return data["items"];
+     }))
    }
    getTracks(idAlbum){
     return this.getAlbumById(idAlbum).pipe(map(data=>{
@@ -61,3 +67,4 @@ export class SpotifyService {
      return this.ht.put(url,parametros,{headers});
    }
 }
+

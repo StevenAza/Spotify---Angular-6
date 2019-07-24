@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SpotifyService } from '../../services/spotify.service'
+import { SpotifyService } from "spotify";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

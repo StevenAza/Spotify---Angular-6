@@ -5,7 +5,7 @@
         display: block;
         position: absolute;
         width: 79%;
-        bottom: -18px;
+        bottom: -23px;
     }
 }
 
@@ -23,11 +23,13 @@ nav{
     }
     ul {
         li{
-
+            width: 10em;
+            margin-right: 1em;
             a.nav-link{
                 font-size: 1.1em;
                 color: white;
                 position: relative;
+                text-align: center;
                 &.active{
                    @extend %border-spotify;
                 }
@@ -36,11 +38,13 @@ nav{
                 }
             }
             &:first-child{
+                width: 6em;
                 margin-left: 1em;
             }
             &:last-child{
-                width: 10em;
+                width:15em;
             }
+
         }
     }
 }

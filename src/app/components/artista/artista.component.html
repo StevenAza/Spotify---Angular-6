@@ -16,10 +16,9 @@
                                     <button type="button" *ngSwitchCase="false" (click)="seguirAlbum()" class="btn btn-raised btn-spotify btn-lg"><i class="material-icons">
                                                 favorite_border
                                    </i> Seguir</button>
-                                   <span *ngSwitchCase="true" class="badge-spotify">Sigues este album</span>
+                                   <span *ngSwitchCase="true" class="badge-spotify">Sigues este album. <a [routerLink]="[ '/biblioteca']">Ver tu biblioteca</a></span>
                              </ng-container>
                         </div>
-      
                   </div>
             </div>
       </div>

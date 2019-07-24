@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "spotify-library": [
+        "dist/spotify-library"
+      ],
+      "spotify-library/*": [
+        "dist/spotify-library/*"
+      ],
+      "spotify": [
+        "dist/spotify"
+      ],
+      "spotify/*": [
+        "dist/spotify/*"
+      ]
+    }
   }
 }

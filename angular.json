@@ -134,6 +134,76 @@
           }
         }
       }
+    },
+    "spotify-library": {
+      "root": "projects/spotify-library",
+      "sourceRoot": "projects/spotify-library/src",
+      "projectType": "library",
+      "prefix": "rr",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/spotify-library/tsconfig.lib.json",
+            "project": "projects/spotify-library/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/spotify-library/src/test.ts",
+            "tsConfig": "projects/spotify-library/tsconfig.spec.json",
+            "karmaConfig": "projects/spotify-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/spotify-library/tsconfig.lib.json",
+              "projects/spotify-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "spotify": {
+      "root": "projects/spotify",
+      "sourceRoot": "projects/spotify/src",
+      "projectType": "library",
+      "prefix": "rr",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/spotify/tsconfig.lib.json",
+            "project": "projects/spotify/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/spotify/src/test.ts",
+            "tsConfig": "projects/spotify/tsconfig.spec.json",
+            "karmaConfig": "projects/spotify/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/spotify/tsconfig.lib.json",
+              "projects/spotify/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "SpotifyWeb"

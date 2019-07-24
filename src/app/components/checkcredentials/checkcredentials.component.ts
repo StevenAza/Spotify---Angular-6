@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router  } from '@angular/router'
 import { routerNgProbeToken } from '@angular/router/src/router_module';
-import { SpotifyService } from 'src/app/services/spotify.service';
+import { SpotifyService } from  'spotify'
 
 @Component({
   selector: 'app-checkcredentials',

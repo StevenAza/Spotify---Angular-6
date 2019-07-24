@@ -9,10 +9,11 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { SpotifyModule } from 'spotify';
 
 // HTTTP PETICIONES
-import { HttpClientModule } from '@angular/common/http';
-import { SpotifyService } from './services/spotify.service';
+
+//import { SpotifyService } from './services/spotify.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoaderComponent } from './components/shared/loader/loader.component';
@@ -21,6 +22,8 @@ import { BackComponent } from './components/shared/back/back.component';
 import { LoginComponent } from './components/login/login.component';
 import { CheckcredentialsComponent } from './components/checkcredentials/checkcredentials.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BibliotecaComponent } from './components/biblioteca/biblioteca.component';
+
 
 
 @NgModule({
@@ -37,17 +40,18 @@ import { ProfileComponent } from './components/profile/profile.component';
     BackComponent,
     LoginComponent,
     CheckcredentialsComponent,
-    ProfileComponent
+    ProfileComponent,
+    BibliotecaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    SpotifyModule,
     RouterModule.forRoot(ROUTES, {useHash: false} )
 
   ],
   providers: [
-    SpotifyService
+    //SpotifyService
   ],
   bootstrap: [AppComponent]
 })
